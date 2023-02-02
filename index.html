@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        pre::first-line{
+            color: red;
+            font-size: 15px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <pre>
+    Q1:- Create 2 objects - parent and child. Attach methods to parent and use those methods in child object using parents prototype
+
+
+        
+    let parent = {
+        name: "Parent",
+        greet: function() {
+        console.log(`Hello, this is ${this.name}`);
+        }
+    };
+    
+
+    let child = Object.create(parent);
+    child.name = "PrepBytes";
+    
+    
+    child.greet(); 
+  
+    </pre>
+
+    <pre>
+        Q2:-Write code to explain prototype chaining
+
+        const human = {
+            return: true
+          };
+          
+          const rabbit = {
+            return: true
+          };
+          
+          
+          rabbit.__proto__ = human;
+          
+          console.log(rabbit.return); 
+          
+    </pre>
+    <pre>
+        Q3:-Add a method to calculate sum of all elements in Array in array's protype, use that method to calculate sum for multiple arrays
+
+        Array.prototype.sum = function() {
+            let result = 0;
+            for (let i = 0; i < this.length; i++) {
+              result += this[i];
+            }
+            return result;
+          };
+          
+          let array = [10, 20, 30];
+        
+          
+          console.log(array.sum()); // Output: 60
+        
+    </pre>
+    <pre>
+        Q4:-Write a JavaScript function to retrieve all the names of object's own and inherited properties.
+
+        function details(year,marks,location) {
+            this.year=year;
+            this.marks=marks;
+            this.location=location
+        }
+        details.prototype.curyear="2023";//2023
+        const data=new details(2022,67,"AP");//details { year: 2022, marks: 67, location: 'AP' }
+        console.log(data)
+
+    </pre>
+</body>
+</html>
